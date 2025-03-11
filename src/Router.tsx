@@ -28,8 +28,14 @@ const Router = () => {
         <Provider store={store}>
             <NavigationContainer>
                 <Stack.Navigator initialRouteName="Login">
-                    <Stack.Screen name="Login" component={Login} options={{ title: 'Giriş Yap' }} />
-                    <Stack.Screen name="Register" component={Register} options={{ title: 'Kayıt Ol' }} />
+                    <Stack.Screen name="Login" component={Login} options={{
+                        title: 'Giriş Yap',
+                        headerShown: false,
+                    }} />
+                    <Stack.Screen name="Register" component={Register} options={{
+                        title: 'Kayıt Ol',
+                        headerShown: false,
+                    }} />
                     <Stack.Screen name="Home" component={Home} options={{ title: 'Ana Sayfa' }} />
                 </Stack.Navigator>
             </NavigationContainer>
