@@ -13,7 +13,9 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Home from './pages/Home';
-
+import MealPlannerScreen from './pages/MealPlanner';
+import ReminderScreen from './pages/Reminder';
+import DietReportScreen from './pages/DietReport';
 
 export type RootStackParamList = {
     Login: undefined;
@@ -36,11 +38,26 @@ const Router = () => {
                         title: 'Kayıt Ol',
                         headerShown: false,
                     }} />
-                    <Stack.Screen name="Home" component={Home} options={{ title: 'Ana Sayfa' }} />
+                    <Stack.Screen name="Home" component={HomePages} options={{
+                        title: 'Ana Sayfa',
+                        headerShown: false,
+                    }} />
                 </Stack.Navigator>
             </NavigationContainer>
         </Provider>
     );
 };
+
+function HomePages() {
+    return (
+        <Stack.Navigator initialRouteName="Home">
+            <Stack.Screen name="Home" component={Home} />
+            <Stack.Screen name="MealPlanner" component={MealPlannerScreen} />
+            <Stack.Screen name="Reminder" component={ReminderScreen} />
+            <Stack.Screen name="DietReport" component={DietReportScreen} />
+        </Stack.Navigator>
+    );
+}
+
 
 export default Router;

@@ -2,11 +2,11 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import LottieView from 'lottie-react-native';
 
-const Error = () => {
+const Loading = () => {
   return (
       <View style={styles.container}>
         <LottieView
-            source={require('../../assets/error.json')}
+            source={require('../../../assets/loading.json')}
             autoPlay
             loop
             style={styles.animation}
@@ -27,4 +27,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Error;
+export default Loading;

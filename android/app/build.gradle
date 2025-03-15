@@ -108,12 +108,20 @@ android {
 }
 
 dependencies {
-    // The version of react-native is set by the React Native Gradle Plugin
+    // React Native bağımlılığı
     implementation("com.facebook.react:react-android")
 
+    // Hermes için gerekli bağımlılık
     if (hermesEnabled.toBoolean()) {
         implementation("com.facebook.react:hermes-android")
     } else {
         implementation jscFlavor
     }
+
+    // AndroidX desteğini ekle
+    implementation "androidx.core:core-ktx:1.13.1"
+
+    // Eğer eski `android.support` bağımlılıkları varsa kaldır
+    // implementation 'com.android.support:support-compat:27.1.1' (KALDIR)
 }
+

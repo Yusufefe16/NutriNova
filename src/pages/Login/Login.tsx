@@ -6,8 +6,8 @@ import { useDispatch } from 'react-redux';
 import { loginSuccess } from '../../redux/features/authSlice';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../../Router';
-import Button from '../../components/Button';
-import Input from '../../components/Input';
+import Button from '../../components/commonComponents/Button';
+import Input from '../../components/commonComponents/Input';
 import styles from './Login.style.tsx';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Login'>;
